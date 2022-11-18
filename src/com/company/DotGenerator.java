@@ -15,8 +15,8 @@ public class DotGenerator {
 
 	 public DotGenerator(String num, String file) {
 	 
-		 int width = 2048,	height = 2048;
-		 double max	= 2048;
+		 int width = 1000,	height = 1000;
+		 double max	= 1000;
 		  
 		 BufferedImage	image	= new	BufferedImage(width,	height, BufferedImage.TYPE_INT_RGB);
 		 
@@ -40,11 +40,8 @@ public class DotGenerator {
    		Scanner scanner = new Scanner(new File(file));
    		while(scanner.hasNextInt())
    		{
-   			int x	= scanner.nextInt();
-   			int y	= scanner.nextInt();
-   			
-   			double dx =	x;
-   			double dy =	y;
+   			double dx = scanner.nextDouble();
+   			double dy = scanner.nextDouble();
    			
    			dx	/=	max;
    			dy	/=	max;
@@ -52,8 +49,8 @@ public class DotGenerator {
    			dx	*=	(width);
    			dy	*=	(height);
    			
-   			x = (int)dx;
-   			y = (int)dy;
+   			int x = (int)dx;
+   			int y = (int)dy;
             
             boolean die = false;
             if (x <= 0) { die = true;}
